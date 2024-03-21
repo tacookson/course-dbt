@@ -1,0 +1,24 @@
+version: 2
+
+models:
+
+  - name: stg_postgres__addresses
+    description: TODO
+
+  - name: stg_postgres__events
+    description: TODO
+
+  - name: stg_postgres__order_items
+    description: TODO
+
+  - name: stg_postgres__orders
+    description: TODO
+
+  - name: stg_postgres__products
+    description: TODO
+
+  - name: stg_postgres__promos
+    description: TODO
+
+  - name: stg_postgres__users
+    description: TODO
