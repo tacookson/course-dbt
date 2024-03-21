@@ -3,22 +3,22 @@ version: 2
 models:
 
   - name: stg_postgres__addresses
-    description: TODO
+    description: Dimension table of addresses. Each row corresponds to a unique address on the platform.
 
   - name: stg_postgres__events
-    description: TODO
+    description: Fact table of web events. Each row corresponds to a unique web event.
 
   - name: stg_postgres__order_items
-    description: TODO
+    description: Dimension table of order items (order lines). Each row corresponds to a unique product part of an order.
 
   - name: stg_postgres__orders
-    description: TODO
+    description: Table with elements of a dimension and accumulating snapshot table. Each row corresponds to an order on the platform.
 
   - name: stg_postgres__products
-    description: TODO
+    description: Dimension table of products. Each row corresponds to a unique product on the platform.
 
   - name: stg_postgres__promos
-    description: TODO
+    description: Dimension table of promotions. Each row corresponds to a promocode on the platform.
 
   - name: stg_postgres__users
-    description: TODO
+    description: Dimension table of users. Each row corresponds to a unique user on the platform.
