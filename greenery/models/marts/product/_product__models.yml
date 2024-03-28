@@ -1,0 +1,6 @@
+version: 2
+
+models:
+
+  - name: fct_pageviews
+    description: Fact model of pageview events. Each row corresponds to a single page view.
