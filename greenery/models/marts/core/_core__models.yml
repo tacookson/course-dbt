@@ -1,0 +1,19 @@
+version: 2
+
+models:
+
+  - name: dim_users
+    description: Dimension table of users. Each row corresponds to a single user account.
+    columns:
+      - name: user_id
+      - name: address_id
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: phone_number
+      - name: aov
+      - name: order_count
+      - name: lifetime_spend
+      - name: last_order_at
+      - name: created_at
+      - name: updated_at

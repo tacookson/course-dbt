@@ -1,0 +1,12 @@
+version: 2
+
+models:
+
+  - name: int_user_order_metrics
+    description: Dimension table of user order metrics. Each row corresponds to a single user, with calculated metrics as features.
+    columns:
+      - name: user_id
+      - name: order_count
+      - name: aov
+      - name: lifetime_spend
+      - name: last_order_at
