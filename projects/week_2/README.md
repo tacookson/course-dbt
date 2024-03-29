@@ -61,3 +61,16 @@ I would want more data on all the touchpoints Greenery has with users. For examp
 I added a single mart model in `product`. I focused on breadth across `core` and `marketing` schemas, rather than breadth within `product`.
 
 The model is `fct_product_pageviews_daily`, which provides a summary of pageviews and unique users, by product, by day. I also created an intermediate model of raw pageviews, `int_pageviews`, as a step to building this model. My rationale is that the Product team would want data ready-to-consume in the form of a report with a grain of one row per product per day. I kept pageviews as an intermediate model because this seemed too in-the-weeds for end users on the Product team. (Though maybe I'm not giving enough credit to the Greenery Product team's SQL skills!)
+
+## What assumptions are you making about each model? (i.e. why are you adding each test?)
+
+I only added tests to the sources this week :(
+
+I stuck to dbt's [out-of-the-box data tests](https://docs.getdbt.com/reference/resource-properties/data-tests#out-of-the-box-data-tests), so I was testing for uniqueness, existence (i.e., not null-ness), accepted values, and referential integrity.
+
+- For each primary key, I applied `not_null` and `unique`, since primary keys should always have these properties.
+- I used judgement calls for applying `not_null` on other fields. For example, in the events table, I assumed that `page_url` would not be null.
+- I used `accepted_values` tests on status and type fields (e.g., `event_type` in the events table and `status` in the orders table).
+- I used `relationships` to test referential integrity of foreign keys (e.g., an order record referencing a `promo_id` should have that `promo_id` value in the promos table).
+
+All my tests passed! So sources are looking good. This is a nice break from the real-world, where I usually have a bunch of referential integrity issues.
