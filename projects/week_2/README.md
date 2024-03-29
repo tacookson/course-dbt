@@ -55,3 +55,9 @@ Predicting purchases has long been a topic of interest for Marketing teams. One 
 ## If you had more data, what features would you want to look into to answer this question?
 
 I would want more data on all the touchpoints Greenery has with users. For example, if Greenery relies extensively on email marketing, I would look at whether users have opted in to marketing communications and whether or not they engage with those communications. A user who opens and clicks through every email they get from Greenery is likely much more likely to buy than one who is unsubscribed from marketing emails.
+
+## Explain the product mart models you added. Why did you organize the models in the way you did?
+
+I added a single mart model in `product`. I focused on breadth across `core` and `marketing` schemas, rather than breadth within `product`.
+
+The model is `fct_product_pageviews_daily`, which provides a summary of pageviews and unique users, by product, by day. I also created an intermediate model of raw pageviews, `int_pageviews`, as a step to building this model. My rationale is that the Product team would want data ready-to-consume in the form of a report with a grain of one row per product per day. I kept pageviews as an intermediate model because this seemed too in-the-weeds for end users on the Product team. (Though maybe I'm not giving enough credit to the Greenery Product team's SQL skills!)
