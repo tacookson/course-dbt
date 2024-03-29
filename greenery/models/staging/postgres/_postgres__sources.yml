@@ -9,9 +9,66 @@ sources:
     tables:
 
       - name: addresses
+        columns:
+          - name: address_id
+          - name: address
+          - name: zipcode
+          - name: state
+          - name: country
+
       - name: events
+        columns:
+          - name: event_id
+          - name: session_id
+          - name: user_id
+          - name: event_type
+          - name: page_url
+          - name: created_at
+          - name: order_id
+          - name: product_id
+
       - name: order_items
+        columns:
+          - name: order_id
+          - name: product_id
+          - name: quantity
+
       - name: orders
+        columns:
+          - name: order_id
+          - name: promo_id
+          - name: user_id
+          - name: address_id
+          - name: created_at
+          - name: order_cost
+          - name: shipping_cost
+          - name: order_total
+          - name: tracking_id
+          - name: shipping_service
+          - name: estimated_delivery_at
+          - name: delivered_at
+          - name: status
+
       - name: products
+        columns:
+          - name: product_id
+          - name: name
+          - name: price
+          - name: inventory
+
       - name: promos
+        columns:
+          - name: promo_id
+          - name: discount
+          - name: status
+
       - name: users
+        columns:
+          - name: user_id
+          - name: first_name
+          - name: last_name
+          - name: email
+          - name: phone_number
+          - name: created_at
+          - name: updated_at
+          - name: address_id
