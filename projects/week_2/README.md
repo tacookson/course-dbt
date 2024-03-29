@@ -78,3 +78,7 @@ All my tests passed! So sources are looking good. This is a nice break from the 
 ## Your stakeholders at Greenery want to understand the state of the data each day. Explain how you would ensure these tests are passing regularly and how you would alert stakeholders about bad data getting through.
 
 I would use `dbt build` during my production runs so that tests are incorporated into the daily automated pipeline. I might also set up an integration with Slack so that test failures (and warnings!) get sent to a special Slack channel for the Analytics Engineering team. This would allow for quick reaction when there are data issues.
+
+## Which products had their inventory change from week 1 to week 2? 
+
+Ooooops, I dropped my schema to clean up non-Greenery models like `mushrooms` and the tutorial models. It looks like I also inadvertently dropped the snapshot, so I can't answer this question!
