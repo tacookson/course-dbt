@@ -74,3 +74,7 @@ I stuck to dbt's [out-of-the-box data tests](https://docs.getdbt.com/reference/r
 - I used `relationships` to test referential integrity of foreign keys (e.g., an order record referencing a `promo_id` should have that `promo_id` value in the promos table).
 
 All my tests passed! So sources are looking good. This is a nice break from the real-world, where I usually have a bunch of referential integrity issues.
+
+## Your stakeholders at Greenery want to understand the state of the data each day. Explain how you would ensure these tests are passing regularly and how you would alert stakeholders about bad data getting through.
+
+I would use `dbt build` during my production runs so that tests are incorporated into the daily automated pipeline. I might also set up an integration with Slack so that test failures (and warnings!) get sent to a special Slack channel for the Analytics Engineering team. This would allow for quick reaction when there are data issues.
