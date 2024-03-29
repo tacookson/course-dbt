@@ -14,6 +14,7 @@ models:
       - name: aov
       - name: order_count
       - name: lifetime_spend
+      - name: first_order_at
       - name: last_order_at
       - name: created_at
       - name: updated_at

@@ -38,6 +38,7 @@ joined as (
         coalesce(order_metrics.lifetime_spend, 0) as lifetime_spend,
 
         -- timestamps
+        order_metrics.first_order_at,
         order_metrics.last_order_at,
         users.created_at,
         users.updated_at
