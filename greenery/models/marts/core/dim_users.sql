@@ -97,4 +97,4 @@ final as (
 
 )
 
-select * from rfm_scores
+select * from final
