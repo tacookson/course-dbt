@@ -11,6 +11,9 @@ sources:
       - name: addresses
         columns:
           - name: address_id
+            tests:
+              - not_null
+              - unique
           - name: address
           - name: zipcode
           - name: state
@@ -19,48 +22,128 @@ sources:
       - name: events
         columns:
           - name: event_id
+            tests:
+              - not_null
+              - unique
           - name: session_id
+            tests:
+              - not_null
           - name: user_id
+            tests:
+              - not_null
           - name: event_type
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['add_to_cart', 'checkout', 'package_shipped', 'page_view']
           - name: page_url
+            tests:
+              - not_null
           - name: created_at
+            tests:
+              - not_null
           - name: order_id
+            tests:
+              - relationships:
+                  to: source('postgres', 'orders')
+                  field: order_id
           - name: product_id
+            tests:
+              - relationships:
+                  to: source('postgres', 'products')
+                  field: product_id
 
       - name: order_items
         columns:
           - name: order_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('postgres', 'orders')
+                  field: order_id
           - name: product_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('postgres', 'products')
+                  field: product_id
           - name: quantity
+            tests:
+              - not_null
 
       - name: orders
         columns:
           - name: order_id
+            tests:
+              - not_null
+              - unique
           - name: promo_id
+            tests:
+              - relationships:
+                  to: source('postgres', 'promos')
+                  field: promo_id
           - name: user_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('postgres', 'users')
+                  field: user_id
           - name: address_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('postgres', 'addresses')
+                  field: address_id
           - name: created_at
+            tests:
+              - not_null
           - name: order_cost
+            tests:
+              - not_null
           - name: shipping_cost
           - name: order_total
+            tests:
+              - not_null
           - name: tracking_id
           - name: shipping_service
           - name: estimated_delivery_at
           - name: delivered_at
           - name: status
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['delivered', 'preparing', 'shipped']
 
       - name: products
         columns:
           - name: product_id
+            tests:
+              - not_null
+              - unique
           - name: name
+            tests:
+              - not_null
           - name: price
+            tests:
+              - not_null
           - name: inventory
+            tests:
+              - not_null
 
       - name: promos
         columns:
           - name: promo_id
+            tests:
+              - not_null
+              - unique
           - name: discount
+            tests:
+              - not_null
           - name: status
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['active', 'inactive']
 
       - name: users
         columns:
