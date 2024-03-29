@@ -1,0 +1,13 @@
+version: 2
+
+models:
+
+  - name: int_pageviews
+    description: Fact model of pageview events. Each row corresponds to a single page view.
+    columns:
+      - name: event_id
+      - name: user_id
+      - name: session_id
+      - name: product_id
+      - name: page_url
+      - name: created_at

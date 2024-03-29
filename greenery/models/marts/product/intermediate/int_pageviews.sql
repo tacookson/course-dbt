@@ -6,7 +6,7 @@ events as (
 
 ),
 
-pageviews as (
+final as (
 
     select
 
@@ -31,4 +31,5 @@ pageviews as (
 
 )
 
-select * from pageviews
+select * from final
+order by created_at

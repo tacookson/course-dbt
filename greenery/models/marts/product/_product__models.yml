@@ -2,12 +2,11 @@ version: 2
 
 models:
 
-  - name: fct_pageviews
-    description: Fact model of pageview events. Each row corresponds to a single page view.
+  - name: fct_product_pageview_daily
+    description: Aggregated fact model of pageviews for individual products. Each row corresponds to one day per product.
     columns:
-      - name: event_id
-      - name: user_id
-      - name: session_id
+      - name: pageview_date
       - name: product_id
-      - name: page_url
-      - name: created_at
+      - name: product_name
+      - name: pageview_count
+      - name: user_count
