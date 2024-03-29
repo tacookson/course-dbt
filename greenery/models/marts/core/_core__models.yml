@@ -14,6 +14,10 @@ models:
       - name: aov
       - name: order_count
       - name: lifetime_spend
+      - name: recency
+      - name: frequency
+      - name: monetary
+      - name: rfm_score
       - name: first_order_at
       - name: last_order_at
       - name: created_at

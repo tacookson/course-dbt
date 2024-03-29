@@ -1,5 +1,10 @@
-with
+{{
+  config(
+    materialized='table'
+  )
+}}
 
+with
 
 session_event_counts as (
 

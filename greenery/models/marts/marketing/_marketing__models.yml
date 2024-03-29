@@ -3,3 +3,9 @@ version: 2
 models:
 
   - name: fct_session_conversion_daily
+    description: Aggregated fact table of web sessions and conversion to different levels of the sales funnel. Each row corresponds to a single day.
+    columns:
+      - name: session_date
+      - name: session_count,
+      - name: add_to_cart_pct
+      - name: checkout_pct
