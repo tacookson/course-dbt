@@ -148,10 +148,21 @@ sources:
       - name: users
         columns:
           - name: user_id
+            tests:
+              - not_null
+              - unique
           - name: first_name
           - name: last_name
           - name: email
           - name: phone_number
           - name: created_at
+            tests:
+              - not_null
           - name: updated_at
+            tests:
+              - not_null
           - name: address_id
+            tests:
+              - relationships:
+                  to: source('postgres', 'addresses')
+                  field: address_id
