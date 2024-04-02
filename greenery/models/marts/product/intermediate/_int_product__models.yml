@@ -3,7 +3,7 @@ version: 2
 models:
 
   - name: int_order_line_totals
-    description:
+    description: TODO
     columns:
       - name: order_key
         tests:

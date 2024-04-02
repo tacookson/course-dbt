@@ -29,16 +29,16 @@ add_prices as (
 
 line_totals as (
 
-select
+    select
 
-    order_id,
-    /* this is a degenerate dimension that has no real meaning, except to make the table
-    more readable */
-    row_number() over (partition by order_id order by product_id) as line_number,
-    product_id,
-    unit_price * quantity as line_cost
-    
-from order_lines
+        order_id,
+        /* this is a degenerate dimension that has no real meaning, except to make the table
+        more readable */
+        row_number() over (partition by order_id order by product_id) as line_number,
+        product_id,
+        unit_price * quantity as line_cost
+        
+    from add_prices
 
 ),
 
@@ -48,7 +48,7 @@ final as (
 
         /* we generate a surrogate key to act as the new primary key, since we have regrained this
         table to be one record per order line */
-        {{ dbt_utils.generate_surrogate_key(['order_id','order_line']) }} as order_key,
+        {{ dbt_utils.generate_surrogate_key(['order_id','line_number']) }} as order_key,
         order_id,
         line_number,
         product_id,
