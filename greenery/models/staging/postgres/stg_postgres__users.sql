@@ -13,17 +13,21 @@ renamed as (
         -- primary key
         user_id,
 
+        -- foreign keys
+        address_id,
+
+        -- properties
         first_name,
         last_name,
         email,
         phone_number,
+
+        -- timestamps
         created_at,
-        updated_at,
-        address_id
+        updated_at
 
     from source
 
 )
-
 
 select * from renamed

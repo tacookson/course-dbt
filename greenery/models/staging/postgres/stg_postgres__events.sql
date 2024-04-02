@@ -13,17 +13,21 @@ renamed as (
         -- primary key
         event_id,
         
+        -- foreign keys
         session_id,
         user_id,
+        order_id,
+        product_id,
+
+        -- properties
         event_type,
         page_url,
-        created_at,
-        order_id,
-        product_id
+
+        -- timestamps
+        created_at
 
     from source
 
 )
-
 
 select * from renamed

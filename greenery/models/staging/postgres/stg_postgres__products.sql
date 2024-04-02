@@ -13,13 +13,19 @@ renamed as (
         -- primary key
         product_id,
 
+        -- foreign keys
+        -- none
+
+        -- properties
         name,
         price,
         inventory
 
+        -- timestamps
+        -- none
+
     from source
 
 )
-
 
 select * from renamed

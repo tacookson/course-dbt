@@ -13,12 +13,18 @@ renamed as (
         -- primary key
         promo_id,
 
+        -- foreign keys
+        -- none
+
+        -- properties
         discount,
         status
+
+        -- timestamps
+        -- none
 
     from source
 
 )
-
 
 select * from renamed
