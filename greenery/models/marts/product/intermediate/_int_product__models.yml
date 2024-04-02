@@ -2,6 +2,26 @@ version: 2
 
 models:
 
+  - name: int_order_line_totals
+    description:
+    columns:
+      - name: order_key
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+      - name: line_number
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: line_cost
+        tests:
+          - not_null
+
   - name: int_pageviews
     description: Fact model of pageview events. Each row corresponds to a single page view.
     columns:
