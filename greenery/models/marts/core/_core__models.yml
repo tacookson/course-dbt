@@ -6,6 +6,9 @@ models:
     description: Dimension table of users. Each row corresponds to a single user account.
     columns:
       - name: user_id
+        tests:
+          - not_null
+          - unique
       - name: address_id
       - name: first_name
       - name: last_name

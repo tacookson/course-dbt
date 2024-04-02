@@ -6,6 +6,9 @@ models:
     description: Aggregated fact table of events that occurred in a web session. One row corresponds to a single web session.
     columns:
       - name: session_id
+        tests:
+          - not_null
+          - unique
       - name: page_view_count
       - name: add_to_cart_count
       - name: checkout_count

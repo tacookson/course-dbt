@@ -6,8 +6,15 @@ models:
     description: Dimension table of user order metrics. Each row corresponds to a single user, with calculated metrics as features.
     columns:
       - name: user_id
+        tests:
+          - not_null
+          - unique
       - name: order_count
+        tests:
+          - not_null
       - name: aov
       - name: lifetime_spend
+        tests:
+          - not_null
       - name: first_order_at
       - name: last_order_at
