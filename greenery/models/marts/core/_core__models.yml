@@ -2,6 +2,18 @@ version: 2
 
 models:
 
+  - name: dim_addresses
+    description: Dimension table of addresses. Each row corresponds to a single address.
+    columns:
+      - name: address_id
+        tests:
+          - not_null
+          - unique
+      - name: address
+      - name: zipcode
+      - name: state
+      - name: country
+
   - name: dim_users
     description: Dimension table of users. Each row corresponds to a single user account.
     columns:
@@ -10,6 +22,10 @@ models:
           - not_null
           - unique
       - name: address_id
+        tests:
+          - relationships:
+              to: ref('dim_addresses')
+              field: address_id
       - name: first_name
       - name: last_name
       - name: email
