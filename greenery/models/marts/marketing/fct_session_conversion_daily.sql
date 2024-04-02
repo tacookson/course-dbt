@@ -75,6 +75,7 @@ final as (
         occurred into the next day */
         to_date(date_trunc(day, start_at)) as session_date,
         count(session_id) as session_count,
+        sum(has_checkout) as checkout_count,
         avg(has_add_to_cart) as add_to_cart_pct,
         avg(has_checkout) as checkout_pct
 
