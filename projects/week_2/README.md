@@ -3,7 +3,7 @@
 
 ## What is our repeat user rate?
 
-99 users have made at least two orders.
+~79.8% of users are repeat users
 
 ```sql
 with
@@ -31,12 +31,9 @@ final as (
 
     select
 
-        count(user_id) as user_count
+        avg(iff(order_count >= 2, 1, 0)) as repeat_user_rate
 
     from user_orders
-
-    where true
-        and order_count >= 2
 
 )
 
